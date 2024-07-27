@@ -26,11 +26,11 @@ module.exports = {
 	nodes: [
 		{
 			identifier: "Main Node", //- Used for indentifier in stats commands.
-			host: "", //- The host name or IP of the lavalink server.
-			port: 80, // The port that lavalink is listening to. This must be a number!
-			password: "", //- The password of the lavalink server.
-			retryAmount: 200, //- The amount of times to retry connecting to the node if connection got dropped.
-			retryDelay: 40, //- Delay between reconnect attempts if connection is lost.
+			host: "lavalink", //- The host name or IP of the lavalink server. If you're using docker, change this to 'lavalink' - the same as in #app/docker/application.yml > server > address (line 3).
+			port: 2333, // The port that lavalink is listening to. This must be a number! If you're using docker, same as above.
+			password: "youshallnotpass", //- The password of the lavalink server. IF you're using docker, same as above.
+			retryAmount: 20, //- The amount of times to retry connecting to the node if connection got dropped.
+			retryDelay: 3000, //- Delay between connection attempts in milliseconds. Increase this to avoid having your terminal flooded with retries while lavalink is down/starting.
 			secure: false, //- Can be either true or false. Only use true if ssl is enabled!
 		},
 	],
